@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #ecf0f1;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Styling for the Navbar */
+nav {
+    position: fixed; /* Fix navbar to the left */
+    top: 0;
+    left: 0;
+    width: 250px; /* Set width for the navbar */
+    height: 100%;
+    background-color: #34495e;
+    padding: 1rem;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100; /* Ensure navbar stays on top */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column; /* Stack nav items vertically */
+    padding-top: 30px; /* Space from the top */
+}
+
+nav ul li {
+    margin: 15px 0;
+}
+
+nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #1abc9c;
+}
+
+/* Adjust the content area */
+.main-content {
+    margin-left: 270px; /* Offset content from the fixed navbar */
+    padding: 20px;
+    min-height: 100vh; /* Ensure content stretches full height */
+}
+
+/* Table Container */
+.table-container {
+    background-color: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 900px;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #1abc9c;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #ecf0f1;
+}
+
+.no-records {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #e74c3c;
+    margin-top: 20px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    /* Adjust the content and navbar layout on smaller screens */
+    nav {
+        width: 200px; /* Reduce navbar width */
+    }
+
+    .main-content {
+        margin-left: 220px; /* Adjust content margin */
+    }
+
+    .table-container {
+        width: 95%; /* Make table container responsive */
+        padding: 1.5rem;
+    }
+
+    table th,
+    table td {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}

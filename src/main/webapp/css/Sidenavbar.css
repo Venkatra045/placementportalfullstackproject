@@ -1,0 +1,204 @@
+/* Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e0e0e0, #f8f9fc); /* Light grey gradient */
+    color: #444;
+    line-height: 1.6;
+    padding: 20px;
+    animation: fadeIn 1.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+/* Sidebar Styling (Unchanged) */
+nav {
+    background: radial-gradient(circle, #001f3f, #004080, #0073e6);
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.5rem;
+    transition: width 0.5s ease, background 0.4s ease;
+}
+
+nav:hover {
+    width: 320px;
+    background: linear-gradient(120deg, #004080, #001f3f);
+}
+
+/* Content Styling */
+.content {
+    margin-left: 260px; /* Match sidebar width */
+    padding: 20px;
+    width: calc(100% - 260px); /* Avoid overflow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Table Styling */
+.table-container {
+    max-width: 1000px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    overflow-x: auto;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-container th,
+.table-container td {
+    padding: 10px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.table-container th {
+    background: #0073e6;
+    color: #fff;
+    font-weight: bold;
+}
+
+.table-container tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.table-container .no-jobs {
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+    padding: 20px 0;
+}
+
+.btn-apply {
+    background-color: #0073e6;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn-apply:hover {
+    background-color: #004080;
+}
+
+/* Logo Section */
+.logo-container {
+    text-align: center;
+    margin-bottom: 1.5rem; /* Adjust margin */
+}
+.logo-icon {
+    width: 80px; /* Reduced size */
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #ffffff; /* Adjust border thickness */
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+.logo-text {
+    color: #ffffff;
+    font-size: 1.5rem; /* Reduced font size */
+    font-weight: bold;
+    margin-top: 0.8rem;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Navigation Links */
+nav ul {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+
+
+nav ul li a:hover {
+    background: linear-gradient(to right, #0073e6, #004080);
+    color: #ffffff; /* Ensure hover text color remains white */
+    box-shadow: 0 8px 25px rgba(0, 115, 230, 0.5);
+}
+/* Navigation Links */
+nav ul li {
+    margin: 1rem 0;
+    position: relative;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center;
+}
+
+nav ul li a {
+    font-size: 0.9rem;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    transition: all 0.4s ease-in-out;
+    color: #ffffff; /* Set text color to white */
+    text-decoration: none;
+    display: flex; /* Align icon and text */
+    align-items: center; /* Vertically align icon and text */
+    gap: 0.8rem; /* Space between icon and text */
+}
+
+nav ul li a i {
+    font-size: 1.2rem; /* Adjust icon size */
+}
+
+
+
+
+/* Tooltip Effect */
+nav ul li a::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 110%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #0073e6;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+}
+
+nav ul li a:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(10px);
+}

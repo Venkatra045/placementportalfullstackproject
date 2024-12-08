@@ -1,0 +1,104 @@
+/* Reset and Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e0e0e0, #f8f9fc);
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Adjust table container to be below navbar */
+.table-container {
+    margin-top: 80px; /* Adjust this value based on your navbar height */
+    margin-left: 360px; /* Offset for sidebar */
+    padding: 20px;
+    width: 80%;
+    max-width: 1000px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.table-container h2 {
+    text-align: center;
+    color: #004080;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #ffffff;
+    overflow-x: auto;
+}
+
+table thead tr {
+    background: #0073e6;
+    color: #ffffff;
+}
+
+table th,
+table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table tbody tr:nth-child(even) {
+    background: #f8f9fc;
+}
+
+table tbody tr:hover {
+    background: rgba(0, 115, 230, 0.1);
+}
+
+table th {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .table-container {
+        margin-left: 20px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    table th,
+    table td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    table {
+        font-size: 0.9rem;
+    }
+
+    .table-container {
+        margin-left: 10px;
+        width: 100%;
+    }
+}
