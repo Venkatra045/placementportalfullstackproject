@@ -13,7 +13,7 @@
         <div class="icon">❌</div>
         <h1>Session Expired</h1>
         <p class="message">Your session has timed out. Please log in again to continue using the application.</p>
-        <a href="adminlogin" class="btn">Log In</a>
+        <a href="AdminLogin" class="btn">Log In</a>
     </div>
 
 </body>
